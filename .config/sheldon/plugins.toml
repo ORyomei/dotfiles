@@ -1,0 +1,64 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+# apply = ["defer"]
+
+# [templates]
+# defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
+
+[plugins]
+
+# [plugins.zsh-defer]
+# github = "romkatv/zsh-defer"
+# apply = ["source"]
+
+#[plugins.compinit]
+#inline = 'autoload -Uz compinit && compinit'
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.ls]
+github = "zpm-zsh/ls"
+
+[plugins.git-open]
+github = "paulirish/git-open"
+
+[plugins.omz-aliases]
+local = "~/.config/ohmyzsh/plugins/aliases"
+use = ["*.zsh"]
+
+[plugins.omz-lib]
+local = "~/.config/ohmyzsh/lib"
+use = ["clipboard.zsh", "directories.zsh"]
+
+[plugins.omz-copypath]
+local = "~/.config/ohmyzsh/plugins/copypath"
+use = ["*.zsh"]
+
+[plugins.local]
+local = "~/.config/zsh"
+use = ["{!override,*}.zsh"]
+
+[plugins.local-override]
+local = "~/.config/zsh"
+use = ["override.zsh"]
+
+[plugins.powerlevel10k]
+github = "romkatv/powerlevel10k"

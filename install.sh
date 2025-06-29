@@ -3,6 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ln -sfnv "${SCRIPT_DIR}"/.zshrc ~
 ln -sfnv "${SCRIPT_DIR}"/.config/ ~
+touch "${SCRIPT_DIR}"/.config/zsh/override.zsh
 
 # Install sheldon
 curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh |
